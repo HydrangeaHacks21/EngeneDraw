@@ -5,6 +5,8 @@ Copyright (c) 2019 - present AppSeed.us
 
 # Python modules
 import os, logging 
+import cv2
+import numpy
 
 # Flask modules
 from flask               import render_template, request, url_for, redirect, send_from_directory
@@ -15,7 +17,7 @@ from jinja2              import TemplateNotFound
 # App modules
 from app        import app, lm, db, bc
 from app.models import User
-from app.forms import LoginForm, RegisterForm, ShadesImageForm
+from app.forms import LoginForm, RegisterForm
 
 
 # provide login manager with load_user callback
@@ -108,26 +110,6 @@ def login():
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
-
-# Authenticate user
-@app.route('/uploadImageColor.html', methods=['GET', 'POST'])
-def uploadImageColor():
-    # Declare the login form
-    form = ShadesImageForm(request.form)
-
-    # Flask message injected into the page, in case of any errors
-    msg = None
-
-    # check if both http method is POST and form is valid on submit
-    if form.validate_on_submit():
-
-        # assign form data to variables
-        image = request.form.get('image', '', type=str)
-
-
-
-    return render_template('accounts/login.html', form=form, msg=msg)
-
 # App main route + generic routing
 @app.route('/', defaults={'path': 'index.html'})
 @app.route('/<path>')
@@ -154,3 +136,27 @@ def index(path):
 @app.route('/sitemap.xml')
 def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
+
+app.config["IMAGE_UPLOADS"] = r"C:\Users\Amelia\Documents\GitHub\main\app\static\uploaded"
+
+@app.route('/uploadImageColor.html', methods=["POST", "GET"])
+def uploadImageColor():
+    if request.method == "POST":
+        img = request.files["formFile"]
+        colour1 = request.form["colour1"]
+
+        img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
+
+        print(img)
+
+        image2 = cv2.imread('app/static/uploaded/hydrangeaImage.jpg')
+
+        gray = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
+        cv2.imshow('All Contours', gray)
+
+        cv2.waitKey(0)
+
+        return render_template("startPage.html")
+
+    return render_template('uploadImageColor.html')

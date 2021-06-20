@@ -25,28 +25,28 @@
 
          <section class="section section-lg">
             <div class="container">
-                <form method="post" action="" class="mt-4">
+                <form method="post" action="uploadImageColor.html" class="mt-4" enctype="multipart/form-data">
 
                     <!-- Form -->
                     <div class="form-group mb-4">
-                        <label for="email">Username</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span></span>
-                            {{ form.username(class="form-control") }}
-                        </div>
-                        <label for="formFile" class="form-label">Select an image from your computer</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <label for="formFile" class="form-label">Select an image from your computer!</label>
+                        <input class="form-control" type="file" name="formFile" id="formFile">
                     </div>
                     <!-- End of Form -->
                     <div class="form-group">
                         <!-- Form -->
-                        <div class="form-group mb-4">
-                            <label for="password">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
-                                {{ form.password(class="form-control", type="password") }}
-                            </div>
-                        </div>
+                        <label for="colour1">Color 1:</label>
+
+                        <select name="colour1" id="colour1">
+                            <option value="ff5656">light red</option>
+                            <option value="ffaa56">light orange</option>
+                            <option value="ffff56">light yellow</option>
+                            <option value="56ff56">light green</option>
+                            <option value="56ffff">light cyan</option>
+                            <option value="5656ff">light blue</option>
+                            <option value="aa56ff">light purple</option>
+                            <option value="ff56ff">light pink</option>
+                        </select>
                         <!-- End of Form -->
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div class="form-check mb-0">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" name="login" class="btn btn-primary">Start processing!</button>
+                        <button type="submit" name="process" class="btn btn-primary">Start processing!</button>
                     </div>
                 </form>
             </div>
