@@ -5,8 +5,10 @@ Copyright (c) 2019 - present AppSeed.us
 
 # Python modules
 import os, logging
+import cv2
 
 # Flask modules
+import numpy
 from flask import render_template, request, url_for, redirect, send_from_directory
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort
@@ -137,7 +139,7 @@ def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
 
-app.config["IMAGE_UPLOADS"] = "main/app/static/uploads"
+app.config["IMAGE_UPLOADS"] = r"C:\Users\Amelia\Documents\GitHub\main\app\static\uploads"
 
 
 @app.route('/uploadImage.html', methods=["POST", "GET"])
@@ -151,6 +153,17 @@ def upload():
         img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
 
         print(grid, colour)
+
+        print(img)
+
+        image2 = cv2.imread('app/static/uploads/piplup.png')
+
+        
+        gray = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
+        cv2.imshow('All Contours', gray)
+
+        cv2.waitKey(0)
 
         return render_template("startPage.html")
 
