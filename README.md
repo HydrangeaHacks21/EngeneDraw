@@ -50,9 +50,9 @@ please excuse that it was poorly named
 
 * Adds colors selected by a user to a simplified image to create an art with an abstract effect
 
-## List of folders with sample outputs 
-
 ## Website
+
+![EngeneDraw website](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/EngeneDraw%20website.gif?raw=true)
 
 To test out our website, follow the steps below (instructions adapted from https://github.com/app-generator/flask-pixel-lite):
 ```bash
