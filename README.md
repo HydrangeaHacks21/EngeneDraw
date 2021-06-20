@@ -4,6 +4,9 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ## Image transformations
 
+### Extracting simple lineart
+
+
 ![extracting simple lineart](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/extracting%20simple%20lineart.gif?raw=true)
 
 
