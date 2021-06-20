@@ -142,7 +142,7 @@ def sitemap():
 path =(os.path.abspath(__file__))
 path = os.path.dirname(path)
 
-app.config["IMAGE_UPLOADS"] = "{}/app/static/uploads".format(path)
+app.config["IMAGE_UPLOADS"] = "{}/static/uploads".format(path)
 print(app.config["IMAGE_UPLOADS"])
 
 @app.route('/uploadImage.html', methods=["POST", "GET"])
@@ -159,7 +159,7 @@ def upload():
         print(grid, colour)
         print(type(img))
 
-        return render_template("startPage.html")
+        return render_template("lineArtOutput.html")
 
     return render_template('uploadImage.html')
 
@@ -168,12 +168,18 @@ def uploadImageColor():
     if request.method == "POST":
         img = request.files["formFile"]
         colour1 = request.form["colour1"]
+        colour2 = request.form["colour2"]
+        colour3 = request.form["colour3"]
+        colour4 = request.form["colour4"]
+        colour5 = request.form["colour5"]
+        colour6 = request.form["colour6"]
+        colour7 = request.form["colour7"]
 
         img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
 
         print(img)
 
-        image2 = cv2.imread('app/static/uploaded/hydrangeaImage.jpg')
+        image2 = cv2.imread('static/uploaded/hydrangeaImage.jpg')
 
         gray = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
@@ -181,6 +187,6 @@ def uploadImageColor():
 
         cv2.waitKey(0)
 
-        return render_template("colorChange.html")
+        return render_template("colorChangeOutput.html")
 
     return render_template('uploadImageColor.html')
