@@ -15,7 +15,8 @@ from jinja2              import TemplateNotFound
 # App modules
 from app        import app, lm, db, bc
 from app.models import User
-from app.forms  import LoginForm, RegisterForm
+from app.forms import LoginForm, RegisterForm, ShadesImageForm
+
 
 # provide login manager with load_user callback
 @lm.user_loader
@@ -106,6 +107,26 @@ def login():
             msg = "Unknown user"
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
+
+
+# Authenticate user
+@app.route('/uploadImageColor.html', methods=['GET', 'POST'])
+def uploadImageColor():
+    # Declare the login form
+    form = ShadesImageForm(request.form)
+
+    # Flask message injected into the page, in case of any errors
+    msg = None
+
+    # check if both http method is POST and form is valid on submit
+    if form.validate_on_submit():
+
+        # assign form data to variables
+        image = request.form.get('image', '', type=str)
+
+
+
+    return render_template('accounts/login.html', form=form, msg=msg)
 
 # App main route + generic routing
 @app.route('/', defaults={'path': 'index.html'})

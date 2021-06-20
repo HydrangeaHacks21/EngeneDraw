@@ -30,3 +30,5 @@ class User(UserMixin, db.Model):
         db.session.commit( )
 
         return self 
+
+
