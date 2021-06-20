@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Upload Image {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+        <!-- Intro section -->
+        <section class="section section-header pb-11 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-8 text-center">
+                        <h1 class="display-2 mb-3">Upload the image you want to draw!</h1>
+                        <p class="lead">Our AI will automatically generate a step-by-step tutorial based on your image</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <div class="section section-sm pb-0 mb-n4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Recoloured image</h3>
+                    <p>Image below</p>
+                     <img src="{{ url_for('static', filename='uploaded/') }}">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section -->
+
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
