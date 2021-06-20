@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-8 text-center">
-                        <h1 class="display-2 mb-3">Upload the image you want to recolor!</h1>
+                        <h1 class="display-2 mb-4">Upload the image you want to recolor!</h1>
                         <p class="lead">Our AI will automatically process and recolor your image!</p>
                     </div>
                 </div>
@@ -27,16 +27,16 @@
             <div class="container">
                 <form method="post" action="uploadImageColor.html" class="mt-4" enctype="multipart/form-data">
 
-                    <!-- Form -->
+                    <!-- Image uploader -->
                     <div class="form-group mb-4">
                         <label for="formFile" class="form-label">Select an image from your computer!</label>
                         <input class="form-control" type="file" name="formFile" id="formFile">
                     </div>
-                    <!-- End of Form -->
-                    <div class="form-group">
-                        <!-- Form -->
-                        <label for="colour1">Color 1:</label>
 
+                    <div class="form-group">
+                        <!-- Color pickers -->
+                        <!-- light colors -->
+                        <label for="colour1">Color 1:</label>
                         <select name="colour1" id="colour1">
                             <option value="ff5656">light red</option>
                             <option value="ffaa56">light orange</option>
@@ -47,7 +47,82 @@
                             <option value="aa56ff">light purple</option>
                             <option value="ff56ff">light pink</option>
                         </select>
-                        <!-- End of Form -->
+
+                        <label for="colour2">Color 2:</label>
+                        <select name="colour2" id="colour2">
+                            <option value="ff5656">light red</option>
+                            <option value="ffaa56">light orange</option>
+                            <option value="ffff56">light yellow</option>
+                            <option value="56ff56">light green</option>
+                            <option value="56ffff">light cyan</option>
+                            <option value="5656ff">light blue</option>
+                            <option value="aa56ff">light purple</option>
+                            <option value="ff56ff">light pink</option>
+                        </select>
+
+                        <!-- mid colors -->
+                        <label for="colour3">Color 3:</label>
+                        <select name="colour3" id="colour3">
+                            <option value="ff0000">red</option>
+                            <option value="ff7f00">orange</option>
+                            <option value="ffff00">yellow</option>
+                            <option value="00ff00">green</option>
+                            <option value="00ffff">cyan</option>
+                            <option value="0000ff">blue</option>
+                            <option value="7f00ff">purple</option>
+                            <option value="ff00ff">pink</option>
+                        </select>
+
+                        <label for="colour4">Color 4:</label>
+                        <select name="colour4" id="colour4">
+                            <option value="ff0000">red</option>
+                            <option value="ff7f00">orange</option>
+                            <option value="ffff00">yellow</option>
+                            <option value="00ff00">green</option>
+                            <option value="00ffff">cyan</option>
+                            <option value="0000ff">blue</option>
+                            <option value="7f00ff">purple</option>
+                            <option value="ff00ff">pink</option>
+                        </select>
+
+                        <label for="colour5">Color 5:</label>
+                        <select name="colour5" id="colour5">
+                            <option value="ff0000">red</option>
+                            <option value="ff7f00">orange</option>
+                            <option value="ffff00">yellow</option>
+                            <option value="00ff00">green</option>
+                            <option value="00ffff">cyan</option>
+                            <option value="0000ff">blue</option>
+                            <option value="7f00ff">purple</option>
+                            <option value="ff00ff">pink</option>
+                        </select>
+
+                        <!-- dark colors -->
+                        <label for="colour6">Color 6:</label>
+                        <select name="colour6" id="colour6">
+                            <option value="bf0000">dark red</option>
+                            <option value="bf5f00">dark orange</option>
+                            <option value="ffff56">dark yellow</option>
+                            <option value="00bf00">dark green</option>
+                            <option value="00bfbf">dark cyan</option>
+                            <option value="0000bf">dark blue</option>
+                            <option value="5f00bf">dark purple</option>
+                            <option value="bf00bf">dark pink</option>
+                        </select>
+
+                        <label for="colour7">Color 7:</label>
+                        <select name="colour7" id="colour7">
+                            <option value="bf0000">dark red</option>
+                            <option value="bf5f00">dark orange</option>
+                            <option value="ffff56">dark yellow</option>
+                            <option value="00bf00">dark green</option>
+                            <option value="00bfbf">dark cyan</option>
+                            <option value="0000bf">dark blue</option>
+                            <option value="5f00bf">dark purple</option>
+                            <option value="bf00bf">dark pink</option>
+                        </select>
+
+                        <!-- Randomizer -->
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div class="form-check mb-0">
                                 <input class="form-check-input" type="checkbox" value="" id="remember">
