@@ -52,8 +52,6 @@ please excuse that it was poorly named
 
 ## Website
 
-![EngeneDraw website](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/EngeneDraw%20website.gif?raw=true)
-
 To test out our website, follow the steps below (instructions adapted from https://github.com/app-generator/flask-pixel-lite):
 ```bash
 $ # Clone the sources
@@ -91,3 +89,4 @@ $ # Access the app in browser: http://127.0.0.1:5000/
 
 ## Website demo
 
+![EngeneDraw website](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/EngeneDraw%20website.gif?raw=true)
