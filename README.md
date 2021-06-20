@@ -25,6 +25,33 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ![simplify complex images](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/simplify%20complex%20images.gif?raw=true)
 
+## Python Scripts (in EngeneDraw_Scripts folder)
+
+## List of key files and descriptions
+please excuse that it was poorly named
+
+#### here.py
+
+* Converts an image into grayscale
+* Extracts contours
+* Adds the contours piecewise onto a set of images
+* Produces a final image with all the lineart of an image extracted
+
+#### gridWithCoords.py
+
+* Adds a grid with an adjustable number of columns to help divide an image and make it easier to draw
+
+#### shading.py
+
+* Converts an image into grayscale 
+* Simplifies it to a handfull of values
+
+#### colorDump.py
+
+* Adds colors selected by a user to a simplified image to create an art with an abstract effect
+
+## List of folders with sample outputs 
+
 ## Website
 
 To test out our website, follow the steps below (instructions adapted from https://github.com/app-generator/flask-pixel-lite):
