@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Contact {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+        <!-- Intro section -->
+        <section class="section section-header pb-11 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-8 text-center">
+                        <h1 class="display-2 mb-3">Upload the image you want to draw!</h1>
+                        <p class="lead">Our AI will automatically generate a step-by-step tutorial based on your image</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section class="section section-lg">
+            <div class="container">
+                <form>
+                    <label for="formFile" class="form-label">Select an image from your computer</label>
+                    <input class="form-control" type="file" id="formFile">
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
