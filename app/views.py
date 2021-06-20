@@ -4,7 +4,10 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 # Python modules
-import os, logging
+import os, logging 
+import cv2
+import numpy
+
 
 # Flask modules
 from flask import render_template, request, url_for, redirect, send_from_directory
@@ -136,13 +139,11 @@ def index(path):
 def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
-
 path =(os.path.abspath(__file__))
 path = os.path.dirname(path)
 
 app.config["IMAGE_UPLOADS"] = "{}/app/static/uploads".format(path)
 print(app.config["IMAGE_UPLOADS"])
-
 
 @app.route('/uploadImage.html', methods=["POST", "GET"])
 def upload():
@@ -161,3 +162,25 @@ def upload():
         return render_template("startPage.html")
 
     return render_template('uploadImage.html')
+
+@app.route('/uploadImageColor.html', methods=["POST", "GET"])
+def uploadImageColor():
+    if request.method == "POST":
+        img = request.files["formFile"]
+        colour1 = request.form["colour1"]
+
+        img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
+
+        print(img)
+
+        image2 = cv2.imread('app/static/uploaded/hydrangeaImage.jpg')
+
+        gray = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
+        cv2.imshow('All Contours', gray)
+
+        cv2.waitKey(0)
+
+        return render_template("colorChange.html")
+
+    return render_template('uploadImageColor.html')
