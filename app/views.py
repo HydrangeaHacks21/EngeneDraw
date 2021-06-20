@@ -6,7 +6,8 @@ Copyright (c) 2019 - present AppSeed.us
 # Python modules
 import os, logging 
 import cv2
-import numpy
+import numpy as np
+from random import randint
 
 
 # Flask modules
@@ -163,6 +164,30 @@ def upload():
 
     return render_template('uploadImage.html')
 
+# function to break grayscale image down by value
+def simplify(x):
+    if x <= 15:
+        return 0
+    elif 15 < x <= 51:
+        return 15
+    elif 51 < x <= 102:
+        return 51
+    elif 102 < x <= 153:
+        return 102
+    elif 153 < x <= 204:
+        return 153
+    elif 204 < x <= 51:
+        return 204
+    else:
+        return 255
+
+simplify_vectorized = np.vectorize(simplify)
+
+
+def swapPositions(list):
+    list[1], list[3] = list[3], list[1]
+    return list
+
 @app.route('/uploadImageColor.html', methods=["POST", "GET"])
 def uploadImageColor():
     if request.method == "POST":
@@ -174,14 +199,58 @@ def uploadImageColor():
         colour5 = request.form["colour5"]
         colour6 = request.form["colour6"]
         colour7 = request.form["colour7"]
+        randomize = request.form.get("randomize")
 
+        # set new colors
+        if randomize:
+            # pick random colors
+            print("random colors")
+            bgr1 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr2 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr3 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr4 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr5 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr6 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+            bgr7 = [randint(0, 255), randint(0, 255), randint(0, 255)]
+
+        else:
+            # convert from hex codes to 3 channels, rgb
+            bgr1 = list(int(colour1[i:i+2], 16) for i in (0, 2, 4))
+            bgr2 = list(int(colour2[i:i+2], 16) for i in (0, 2, 4))
+            bgr3 = list(int(colour3[i:i+2], 16) for i in (0, 2, 4))
+            bgr4 = list(int(colour4[i:i+2], 16) for i in (0, 2, 4))
+            bgr5 = list(int(colour5[i:i+2], 16) for i in (0, 2, 4))
+            bgr6 = list(int(colour6[i:i+2], 16) for i in (0, 2, 4))
+            bgr7 = list(int(colour7[i:i+2], 16) for i in (0, 2, 4))
+
+            print("brg1: ", bgr1)
+
+            # rearrange accordingly
+            bgr1 = swapPositions(bgr1)
+            bgr2 = swapPositions(bgr2)
+            bgr3 = swapPositions(bgr3)
+            bgr4 = swapPositions(bgr4)
+            bgr5 = swapPositions(bgr5)
+            bgr6 = swapPositions(bgr6)
+            bgr7 = swapPositions(bgr7)
+
+        # save object as image
         img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
 
-        print(img)
+        # get image from file
+        image2 = cv2.imread(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
 
-        image2 = cv2.imread('static/uploaded/hydrangeaImage.jpg')
-
+        # convert to grayscale (single channel)
         gray = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
+        # simplify
+        mapped_array = simplify_vectorized(gray)
+
+        # format back to 3 channel
+        mapped_array = mapped_array.astype(np.uint8)
+        backtorgb = cv2.cvtColor(mapped_array, cv2.COLOR_GRAY2RGB)
+
+        # recolor
 
         cv2.imshow('All Contours', gray)
 
