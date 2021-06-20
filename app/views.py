@@ -137,7 +137,11 @@ def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
 
-app.config["IMAGE_UPLOADS"] = "main/app/static/uploads"
+path =(os.path.abspath(__file__))
+path = os.path.dirname(path)
+
+app.config["IMAGE_UPLOADS"] = "{}/app/static/uploads".format(path)
+print(app.config["IMAGE_UPLOADS"])
 
 
 @app.route('/uploadImage.html', methods=["POST", "GET"])
@@ -150,7 +154,9 @@ def upload():
 
         img.save(os.path.join(app.config["IMAGE_UPLOADS"], img.filename))
 
+        print(app.config["IMAGE_UPLOADS"])
         print(grid, colour)
+        print(type(img))
 
         return render_template("startPage.html")
 
