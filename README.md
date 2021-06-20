@@ -9,19 +9,19 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ![extracting simple lineart](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/extracting%20simple%20lineart.gif?raw=true)
 
-
+### Stepwise progression
 
 ![Stepwise progression gif](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/Stepwise%20progression%20gif.gif?raw=true)
 
-
+### Generate grid on image
 
 ![generate grid to improve proportions](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/generate%20grid%20to%20improve%20proportions.gif?raw=true)
 
-
+### Simplify and recolor
 
 ![simplify and recolor](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/simplify%20and%20recolor.gif?raw=true)
 
-
+### Simplify complex images
 
 ![simplify complex images](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/simplify%20complex%20images.gif?raw=true)
 
