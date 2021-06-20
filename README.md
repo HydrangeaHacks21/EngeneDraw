@@ -27,7 +27,7 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ## Python Scripts (in EngeneDraw_Scripts folder)
 
-Check out our OpenCV testing scripts ![here](https://github.com/HydrangeaHacks21/EngeneDraw/tree/master/EngeneDraw_scripts)
+Check out our OpenCV testing scripts [here](https://github.com/HydrangeaHacks21/EngeneDraw/tree/master/EngeneDraw_scripts)
 
 ## List of key files and descriptions
 please excuse that it was poorly named
