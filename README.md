@@ -6,22 +6,31 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ### Extracting simple lineart
 
+Images can be difficult to process especially when they are filled with many differnt colors and shades. We use contour extraction to help make the key lines and features of an image easier to identify, making it easier for kids to draw their favourite characters.
 
 ![extracting simple lineart](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/extracting%20simple%20lineart.gif?raw=true)
 
 ### Stepwise progression
 
+We included a stepwise progression of the contours to help kids visualize the process of creating the image from scratch. 
+
 ![Stepwise progression gif](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/Stepwise%20progression%20gif.gif?raw=true)
 
 ### Generate grid on image
+
+Generating a custom grid enables users to achieve better proportions when transfering an image to paper. Our program allows the user to generate grids of custom density easily.
 
 ![generate grid to improve proportions](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/generate%20grid%20to%20improve%20proportions.gif?raw=true)
 
 ### Simplify and recolor
 
+It can be difficult to map out different areas of highlights and shadows on to paper. Simplifying it by grouping regions of similar color tone can allow users to more easily develop depth in their drawings.
+
 ![simplify and recolor](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/simplify%20and%20recolor.gif?raw=true)
 
 ### Simplify complex images
+
+Images with a lot of features can also be simplified into more generic blobs that are easier to process and transfer onto a first sketch, which is a key skill to develop when working towards a more realistic result.
 
 ![simplify complex images](https://github.com/HydrangeaHacks21/EngeneDraw/blob/master/readmeImages/simplify%20complex%20images.gif?raw=true)
 
