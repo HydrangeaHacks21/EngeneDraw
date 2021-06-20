@@ -24,7 +24,8 @@ Welcome to EngeneDraw, the AI assisted art teacher that can simplify complex ref
 
 ## Website
 
-To test out our website, follow the steps below (adapted from https://github.com/app-generator/flask-pixel-lite):
+To test out our website, follow the steps below (instructions adapted from https://github.com/app-generator/flask-pixel-lite):
+```bash
 $ # Clone the sources
 $ git clone https://github.com/HydrangeaHacks21/EngeneDraw.git
 $ cd EngeneDraw
@@ -56,8 +57,7 @@ $ # --port=5000    - specify the app port (default 5000)
 $ flask run --host=0.0.0.0 --port=5000
 $
 $ # Access the app in browser: http://127.0.0.1:5000/
-
-
+```
 
 ## Website demo
 
